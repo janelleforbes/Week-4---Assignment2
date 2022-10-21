@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 //develop schema with attributes
 //method with parameters or objects
-const ContactSchema = new Schema({
+const LoginSchema = new Schema({
     //properties
     Username: String, 
     Password: String, 
@@ -13,7 +13,7 @@ const ContactSchema = new Schema({
 }, {
     //options
     timestamps: true,
-    collection: 'contact'
+    collection: 'user'
 });
 
-export default mongoose.model('contact', ContactSchema);
+export default mongoose.model('user', LoginSchema);

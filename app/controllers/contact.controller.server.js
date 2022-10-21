@@ -24,10 +24,10 @@ export function ProcessLoginPage(req, res, next){
         if(err){
             console.error(err);
             res.end(err);
-            res.redirect('/contact-login')
+            res.redirect('/contact/login')
         };
 
-        res.redirect('/contact-list')
+        res.redirect('/contact/list')
     } )
 }
 
@@ -99,7 +99,7 @@ export function ProcessContactUpdatePage(req, res, next){
             res.end(err);
         };
 
-        res.redirect('/contact-list')
+        res.redirect('/contact/list')
     } )
 }
 
@@ -112,6 +112,6 @@ export function ProcessContactDelete(req, res, next){
             res.end(err);
         }
 
-        res.redirect('/contact-list');
+        res.redirect('/contact/list');
     })
 }

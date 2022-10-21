@@ -1,6 +1,6 @@
 <div class="container">
     <h1>Business Contact List</h1>
-    <a href="/contact-list" class="btn btn-primary" role="button">
+    <a href="../contact/list.ejs" class="btn btn-primary" role="button">
         <i class="fas fa-plus-circle"></i> Contacts</a>
     <div class="row">
         <div class="col">
@@ -24,6 +24,19 @@
                             <td><%= contact[count].Name %></td>
                             <td><%= contact[count].Number %></td>
                             <td><%= contact[count].Email %></td>
+
+                            <!--Buttons to update contact list and delete contact-->
+                            <td class="text-center col-1">
+                                <a href="/contact-update/<%= auth[count]._id %>"
+                                    class="btn btn-primary btn-sm">
+                                    <i class="fas fa-pencil-alt"></i> Update</a>
+                            </td>
+                            
+                            <td class="text-center col-1">
+                                <a href="/contact-delete/<%= contact[count]._id %>"
+                                    class="btn btn-danger btn-sm">
+                                    <i class="fas fa-trash-alt"></i> Delete</a>
+                            </td>
                         
                         </tr>
                     <% } %>

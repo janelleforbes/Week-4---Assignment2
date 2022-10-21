@@ -2,7 +2,9 @@
     <div class="row">
         <div class="offset-md-3 col-md-6">
             <h1><%= title %></h1>
-            <a href="/contact-login" class="btn btn-primary" role="button">
+            <!--Form for user login-->
+            <!--Username entry-->
+            <a href="../contact/login.ejs" class="btn btn-primary" role="button">
             <form class="form" method="post">
                 <input type="hidden" name="id" value="<%= username._id %>" >
                 <div class="form-group">
@@ -14,7 +16,7 @@
                     value="<%= user.name %>"
                     required>
                 </div>
-
+<!--Password entry-->
                 <div class="form-group">
                     <label for="authorTextField">Password</label>
                     <input type="text" class="form-control"
@@ -24,7 +26,7 @@
                     value="<%= user.password %>"
                     required>
                 </div>
-
+<!--email entry-->
                 <div class="form-group">
                     <label for="authorTextField">Email</label>
                     <input type="text" class="form-control"
@@ -35,7 +37,7 @@
                     >
                 </div>
 
-
+<!--Buttons to submit form and login and cancel-->
                 <button class="btn btn-primary" type="submit">
                     <a href="/contact-list" class="fas fa-edit">
                     Login</a></button>

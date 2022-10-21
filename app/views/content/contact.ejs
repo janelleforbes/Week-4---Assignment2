@@ -1,0 +1,56 @@
+<div class="container">
+<h1><%=title%></h1>
+Contact Info
+
+
+<table class="table table-striped-columns">
+    <thead>
+        <tr>
+          <th scope="col">Item</th>
+          <th scope="col">Info</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Number</th>
+          <td>647-981-2163</td>
+        </tr>
+        <tr>
+            <th scope="row">Personal E-mail</th>
+            <td>janelle.forbes@gmail.com</td>
+        </tr>
+        <tr>
+            <th scope="row">Centennial E-mail</th>
+            <td>jforbe13@my.centennialcollege.ca</td>
+        </tr>
+        <tr>
+            <th scope="row">LinkedIn</th>
+            <td>@janelle-nicoleforbes</td>
+        </tr>
+      </tbody>
+  </table>
+
+<h2>Contact me with inquiries by filling out the form below:</h2>
+
+    <form action="../content/home.ejs" method="post">
+        <div class="Contact">
+            <label for="fname">First Name</label>
+            <input type ="text" name="fname" required>
+
+            <label for="lname">Last Name</label>
+            <input type ="text" name="lname" required>
+
+            <label for="number">Number</label>
+            <input type="number" number="number" required>
+
+            <label for="email">E-mail</label>
+            <input type ="text" name="email" required>
+
+            <label for="message">Message</label>
+            <input type ="text" message="message" required>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+
+</div>

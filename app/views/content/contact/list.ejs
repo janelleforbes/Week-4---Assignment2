@@ -1,0 +1,34 @@
+<div class="container">
+    <h1>Business Contact List</h1>
+    <a href="/contact-list" class="btn btn-primary" role="button">
+        <i class="fas fa-plus-circle"></i> Contacts</a>
+    <div class="row">
+        <div class="col">
+    <!--Create table with list of contact information-->
+            <table class="table table-striped table-bordered table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col" class="text-center">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Number</th>
+                        <th scope="col">Email</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="contactList">
+                    <!-- Repeatable Rows, for loop using ejs commands -->
+                    <% for(let count = 0; count < contact.length; count++) { %>
+                        <tr>
+                            <th scope="row" class="text-center"><%= count + 1 %></th>
+                            <td><%= contact[count].Name %></td>
+                            <td><%= contact[count].Number %></td>
+                            <td><%= contact[count].Email %></td>
+                        
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -20,6 +20,14 @@ export function DisplayLoginPage(req, res, next){
 
 // Processing Function
 export function ProcessLoginPage(req, res, next){
+    let id = req.params.id;
+    
+    let newContact = contactModel({
+        _id: req.body.id,
+        Username: req.body.Username,
+        Password: req.body.Password,
+        Email: req.body.Email})
+
     passport.authenticate('local', function(err, user, info) {
         if(err){
             console.error(err);
@@ -37,7 +45,7 @@ export function ProcessLoginPage(req, res, next){
                 res.end(err);
             }
 
-            return res.redirect('/');
+            return res.redirect('/login');
 
         })
         

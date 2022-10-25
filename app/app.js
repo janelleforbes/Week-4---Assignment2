@@ -24,8 +24,9 @@ import mongoose from 'mongoose';
 import { MongoURI, Secret } from '../config/config.js';
 
 // Import Routes
-import indexRouter from './routes/index.route.server.js'
+import indexRouter from './routes/index.route.server.js';
 import contactRouter from './routes/contact.route.server.js';
+import authRouter from './routes/auth.route.server.js';
 
 // Instantiate Express Application
 const app = express();
@@ -57,10 +58,24 @@ app.use(session({
     resave: false
 }));
 
+// Auth Step5 - Setup Flash
+app.use(flash());
+
+// Auth Step 6 - Initialize Passport and Session
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Auth Step 7 - Implement the Auth Strategy
+passport.use(User.createStrategy());
+
+// Auth Step 8 - Setup serialization and deserialization
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
 // Use Routes
 app.use('/', indexRouter);
 app.use('/', contactRouter);
-
+app.use('/', authRouter);
 
 export default app;
 

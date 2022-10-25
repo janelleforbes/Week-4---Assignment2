@@ -1,8 +1,7 @@
 //controller to route page and connect
 import { Router } from "express";
 
-import {  DisplayLoginPage,
-    ProcessLoginPage,
+import {  
     DisplayBusinessContactsPage,
     ProcessBusinessContactsPage,
     DisplayContactUpdatePage,
@@ -14,13 +13,11 @@ import {  DisplayLoginPage,
 //instantiate router - on route
 const router = Router();
 
-router.get('/contact/login', DisplayLoginPage);
-router.get('/contact/login', ProcessLoginPage);
-router.get('/contact/list', DisplayBusinessContactsPage);
-router.get('/contact/list', ProcessBusinessContactsPage);
-router.get('/contact/update', DisplayContactUpdatePage);
-router.get('/contact/update', ProcessContactUpdatePage);
-router.get('/contact/update', ProcessContactDelete);
+router.get('/list', DisplayBusinessContactsPage);
+router.get('/list', ProcessBusinessContactsPage);
+router.get('/update', DisplayContactUpdatePage);
+router.get('/update', ProcessContactUpdatePage);
+router.get('/update', ProcessContactDelete);
 
 
 export default router;

@@ -1,9 +1,11 @@
 import mongoose from 'mongoose';
+import passportLocalMongoose from 'passport-local-mongoose';
+const { PassportLocalSchema } = mongoose;
 //create varibale that will be schema class
 const Schema = mongoose.Schema;
 //develop schema with attributes
 //method with parameters or objects
-const LoginSchema = new Schema({
+const UserSchema = new Schema({
     //properties
     Username: String, 
     Password: String, 
@@ -16,4 +18,6 @@ const LoginSchema = new Schema({
     collection: 'user'
 });
 
-export default mongoose.model('user', LoginSchema);
+UserSchema.plugin(passportLocalMongoose);
+
+export default mongoose.model('User', UserSchema);

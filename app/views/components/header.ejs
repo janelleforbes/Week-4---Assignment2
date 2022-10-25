@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a  class="navbar-brand" href="/"><i class="/COMP229-F2022-WEEK2-LAB-301224539/public/content/images/logo.jpg" width="150" height="150"></i> Janelle Forbes Portfolio - COMP229</a>
+    <a  class="navbar-brand" href="/"><a href="/public/content/images/logo.jpg" width="150" height="150"></i> Janelle Forbes Portfolio - COMP229</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -26,9 +26,19 @@
           <a class="nav-link <%= (page == 'contact') ? 'active' : ''; %>" aria-current="page" href="/contact"><i class="fa-solid fa-envelopes-bulk fa-lg"></i> Contact</a>
         </li> 
 <!--Navigation link to login-->
-        <li class="nav-item">
-          <a class="nav-link <%= (page == 'login') ? 'active' : ''; %>" aria-current="page" href="/login"><i class="fa-solid fa-address-book fa-lg"></i> Contacts Login</a>
-        </li>
+<% if(displayName) { %>
+     
+  <li class="nav-item">
+    <a class="nav-link" aria-current="page" href="/logout"><i class="fa-solid fa-right-from-bracket fa-lg"></i> Logout</a>
+  </li>
+
+  <% } else { %>
+
+  <li class="nav-item">
+    <a class="nav-link <%= (page == 'login') ? 'active' : ''; %>" aria-current="page" href="/login"><i class="fa-solid fa-right-to-bracket fa-lg"></i> Login</a>
+  </li>
+
+  <% } %>
       </ul>
     </div>
   </div>
